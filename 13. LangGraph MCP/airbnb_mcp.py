@@ -4,15 +4,18 @@ from langchain_ollama import ChatOllama
 from langgraph.graph import StateGraph, START, END
 from langgraph.prebuilt import ToolNode, tools_condition
 from langchain_core.messages import HumanMessage
-
+from langfuse.langchain import CallbackHandler
 from typing_extensions import TypedDict, Annotated
 import operator
+
+
 
 # Config
 LLM_MODEL = "qwen3"
 BASE_URL = "http://localhost:11434"
 
 llm = ChatOllama(model=LLM_MODEL, base_url=BASE_URL, temperature=0)
+langfuce_trace = CallbackHandler()
 
 
 class AgentState(TypedDict):
