@@ -4,6 +4,7 @@ pydantic>=2.12.3
 typing-extensions>=4.15.0
 
 # LangChain ecosystem
+langchain>=1.3.2
 langchain-community>=0.4
 langchain-core>=1.0.0
 langchain-ollama>=1.0.0
@@ -23,3 +24,6 @@ langchain_mcp_adapters
 
 # Jupyter runtime (required to run .ipynb notebooks)
 jupyter>=1.1.1
+
+# Langfuse
+langfuse>=4.7.1
