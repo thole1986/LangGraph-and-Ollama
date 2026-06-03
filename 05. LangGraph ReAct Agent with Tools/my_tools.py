@@ -24,7 +24,7 @@ def get_weather(location:str) -> str:
         location: City name (e.g., "New York", "London", "Tokyo")
         
     Returns:
-        Current weather information including temperature and conditions.
+        Current weather information including temperature and conditions in JSON format.
     """
 
     url = f"https://wttr.in/{location}?format=j1"
@@ -32,7 +32,6 @@ def get_weather(location:str) -> str:
 
     response.raise_for_status()
     data = response.json()
-
     return data
 
 
@@ -71,6 +70,4 @@ def calculate(expression: str) -> str:
     except Exception as e:
         print(f"Exception has occured with error: {e}")
         return f"Exception has occured with error: {e}"
-
     return result
-
